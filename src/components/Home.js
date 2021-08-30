@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
-import { magicEthereum, magicMoonriver, web3Ethereum, web3Moonriver } from '../magic';
+import { magicEthereum, magicMoonbeam, web3Ethereum, web3Moonbeam } from '../magic';
 import { abi } from '../contract/abi.js';
 import Loading from './Loading';
 import ContractCall from './ContractCall';
@@ -9,13 +9,13 @@ import Info from './Info';
 
 export default function Home() {
   const [magic, setMagic] = useState(magicEthereum);
-  const web3 = magic.network === 'ethereum' ? web3Ethereum : web3Moonriver;
+  const web3 = magic.network === 'ethereum' ? web3Ethereum : web3Moonbeam;
   const [userMetadata, setUserMetadata] = useState();
   const [balance, setBalance] = useState('...');
-  const network = magic.network === 'ethereum' ? 'ethereum' : 'moonriver';
+  const network = magic.network === 'ethereum' ? 'ethereum' : 'moonbeam';
   const ethContractAddress = '0x5b7D039DaE8D61CC3393fc9eAE42014D0C2CE689';
-  const moonriverContractAddress = '0x8389bb98FcE80c444190A3Ec7d0e0673032771F6';
-  const contract = new web3.eth.Contract(abi, network === 'ethereum' ? ethContractAddress : moonriverContractAddress);
+  const moonbeamContractAddress = '0x8389bb98FcE80c444190A3Ec7d0e0673032771F6';
+  const contract = new web3.eth.Contract(abi, network === 'ethereum' ? ethContractAddress : moonbeamContractAddress);
   const [message, setMessage] = useState('...');
   const history = useHistory();
 
@@ -37,7 +37,7 @@ export default function Home() {
   }, [magic]);
 
    const handleChangeNetwork = (e) => {
-    e.target.value === 'ethereum' ? setMagic(magicEthereum) : setMagic(magicMoonriver);
+    e.target.value === 'ethereum' ? setMagic(magicEthereum) : setMagic(magicMoonbeam);
     fetchBalance(userMetadata.publicAddress);
     fetchContractMessage();
   }

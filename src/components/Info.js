@@ -22,13 +22,13 @@ export default function Info({ user, magic, handleChangeNetwork, balance }) {
           <div className='info'>
             <select name='network' onChange={(e) => handleChangeNetwork(e)}>
               <option value='ethereum'>Ethereum Testnet (Rinkeby)</option>
-              <option value='moonriver'>Moonriver Testnet</option>
+              <option value='moonbeam'>Moonbeam Testnet</option>
             </select>
           </div>
           <h1>Public Address</h1>
           <div className='info'>{user.publicAddress}</div>
           <h1>Balance</h1>
-          <div className='info'>{balance.toString().substring(0, 6)} {magic.network === 'moonriver' ? 'DEV' : 'ETH'}</div>
+          <div className='info'>{balance.toString().substring(0, 6)} {magic.network === 'moonbeam' ? 'DEV' : 'ETH'}</div>
           <div><a href='https://faucet.rinkeby.io/' target='_blank'>Get Test ETH ↗️</a></div>
           <div><a href='https://docs.moonbeam.network/getting-started/moonbase/faucet/' target='_blank'>Get Test DEV ↗️</a></div>
         </div>

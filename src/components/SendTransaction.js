@@ -10,13 +10,14 @@ export default function SendTransaction({ web3, network, publicAddress, fetchBal
   const sendTransaction = async () => {
     if (!toAddress || !amount) return;
     disableForm();
-    const { transactionHash } = await web3.eth.sendTransaction({
+    const receipt = await web3.eth.sendTransaction({
       from: publicAddress,
       to: toAddress,
       value: web3.utils.toWei(amount),
-      gasLimit: network === 'ethereum' ? 21000 : 1000000
+      gasLimit: 21000
     });
-    setTxnHash(transactionHash);
+    console.log(receipt);
+    setTxnHash(receipt.transactionHash);
     enableForm();
   }
 

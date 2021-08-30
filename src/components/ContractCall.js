@@ -10,9 +10,12 @@ export default function ContractCall({ network, publicAddress, fetchBalance, mes
   const updateContractMessage = async () => {
     if (!newMessage) return;
     disableForm();
+    
+    let gasLimit = await contract.methods.update(newMessage).estimateGas({});
+
     const receipt = await contract.methods.update(newMessage).send({ 
       from: publicAddress, 
-      gasLimit: network === 'ethereum' ? web3.eth.getBlock("latest").gasLimit : 1000000 
+      gasLimit, 
     });
     console.log(receipt);
     setTxnHash(receipt.transactionHash);
