@@ -182,3 +182,4 @@ return (
 ## Done
 
 That's all there is to it! You've now got an app that allows users to create a wallet with just their email, and switch between the Moonbeam and Ethereum networks within your app.
+
