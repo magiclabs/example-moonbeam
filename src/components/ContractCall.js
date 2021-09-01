@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-export default function ContractCall({ network, publicAddress, fetchBalance, message, contract, fetchContractMessage, web3 }) {
+export default function ContractCall({ network, publicAddress, fetchBalance, message, contract, fetchContractMessage }) {
   const [newMessage, setNewMessage] = useState('');
   const [disabled, setDisabled] = useState(false);
   const [txnHash, setTxnHash] = useState();
@@ -50,7 +50,7 @@ export default function ContractCall({ network, publicAddress, fetchBalance, mes
           {
           txnHash &&
             <div className='info'>
-              <a href={network === 'ethereum' ? `https://rinkeby.etherscan.io/tx/${txnHash}` : `https://moonbase.subscan.io/extrinsic/${txnHash}`} target='_blank'>
+              <a href={network === 'ethereum' ? `https://rinkeby.etherscan.io/tx/${txnHash}` : `https://moonbase.subscan.io/account/${publicAddress}`} target='_blank'>
                 View Transaction
               </a> ↗️
             </div>

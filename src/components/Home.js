@@ -53,7 +53,7 @@ export default function Home() {
       <>
         <Info handleChangeNetwork={handleChangeNetwork} balance={balance} user={userMetadata} magic={magic} />
         <SendTransaction web3={web3} network={network} publicAddress={userMetadata.publicAddress} fetchBalance={fetchBalance} />
-        <ContractCall web3={web3} network={network} contract={contract} publicAddress={userMetadata.publicAddress} fetchBalance={fetchBalance} message={message} fetchContractMessage={fetchContractMessage} />  
+        <ContractCall network={network} contract={contract} publicAddress={userMetadata.publicAddress} fetchBalance={fetchBalance} message={message} fetchContractMessage={fetchContractMessage} />  
       </>
     ) : <Loading />
   );
