@@ -50,7 +50,7 @@ export default function ContractCall({ network, publicAddress, fetchBalance, mes
           {
           txnHash &&
             <div className='info'>
-              <a href={network === 'ethereum' ? `https://rinkeby.etherscan.io/tx/${txnHash}` : `https://moonbase.subscan.io/account/${publicAddress}`} target='_blank'>
+              <a href={network === 'ethereum' ? `https://goerli.etherscan.io/tx/${txnHash}` : `https://moonbase.subscan.io/account/${publicAddress}`} target='_blank'>
                 View Transaction
               </a> ↗️
             </div>
