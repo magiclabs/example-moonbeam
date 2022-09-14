@@ -17,10 +17,6 @@ magicMoonbeam.network = 'moonbeam'
 
 export const web3Moonbeam = new Web3(magicMoonbeam.rpcProvider);
 
-/** 
- * NOTE: when connecting to a testnet, TEST API keys must be used from the Magic dashboard (live API keys for mainnet)
- */
-
 // Setting network to Ethereum via Custom Node (Goerli Testnet)
 export const magicEthereum = new Magic(
   process.env.REACT_APP_MAGIC_PUBLISHABLE_KEY, 
