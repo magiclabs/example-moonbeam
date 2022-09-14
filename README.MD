@@ -84,7 +84,7 @@ import { magicEthereum, magicMoonbeam } from '../magic';
   return (
     <div className='info'>
       <select name='network' onChange={(e) => handleChangeNetwork(e)}>
-        <option value='ethereum'>Ethereum Testnet (Rinkeby)</option>
+        <option value='ethereum'>Ethereum Testnet (Goerli)</option>
         <option value='moonbeam'>Moonbeam Testnet</option>
       </select>
     </div>
